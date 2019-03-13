@@ -9,7 +9,7 @@ $array = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
 
 $data = (new \Comprehend\Comprehend($array))
 	->filter(new \Comprehend\Filter\IsEven)
-	->all();
+	->get();
 
 var_dump($data);
 ```
@@ -24,7 +24,7 @@ $array = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
 $data = (new \Comprehend\Comprehend($array))
 	->filter(new \Comprehend\Filter\IsEven)
 	->do(new \Comprehend\Action\Multiply(2))
-	->all();
+	->get();
 
 var_dump($data);
 ```
@@ -43,7 +43,7 @@ $array = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
 $average = (new \Comprehend\Comprehend($array))
 	->filter(new \Comprehend\Filter\IsEven)
 	->do(new \Comprehend\Action\Multiply(2))
-	->all(new \Comprehend\All\Average);
+	->get(new \Comprehend\All\Average);
 
 var_dump($average);
 ```
@@ -57,7 +57,7 @@ $data = (new \Comprehend\Comprehend($array))
 	->do(function($key, $val){
 		return $val * 2;
 	})
-	->all();
+	->get();
 ```
 
 ## Naming

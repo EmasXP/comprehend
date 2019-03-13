@@ -335,7 +335,7 @@ class Comprehend {
 	}
 
 
-	public function all(callable $callback = null)
+	public function get(callable $callback = null)
 	{
 		$this->execute_array_walk_array_filter_combination();
 
