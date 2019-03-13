@@ -10,7 +10,7 @@ $array = array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
 $data = (new \Comprehend\Comprehend($array))
 	->filter(new \Comprehend\Filter\IsEven)
 	->all();
-	
+
 var_dump($data);
 ```
 
@@ -25,7 +25,7 @@ $data = (new \Comprehend\Comprehend($array))
 	->filter(new \Comprehend\Filter\IsEven)
 	->do(new \Comprehend\Action\Multiply(2))
 	->all();
-	
+
 var_dump($data);
 ```
 
@@ -44,7 +44,7 @@ $average = (new \Comprehend\Comprehend($array))
 	->filter(new \Comprehend\Filter\IsEven)
 	->do(new \Comprehend\Action\Multiply(2))
 	->all(new \Comprehend\All\Average);
-	
+
 var_dump($average);
 ```
 
@@ -64,6 +64,7 @@ $data = (new \Comprehend\Comprehend($array))
 
 * The namespace `\Comprehend\All` is not perfect. A better name needs to be found. Maybe `\Comprehend\Result`?
 * `do()` -> `apply()`?
+* `Comprehend::$actions` => `Comprehend::$tasks`
 
 ## Thoughts
 
@@ -104,7 +105,7 @@ Let's say we have a list of objects, or a list of arrays, and we want to filter 
 
 * Better than using the constructor, but still  I believe is the wrong separation of concern.
 
-#### A different method 
+#### A different method
 
 ```php
 ->subFilter("id", new IsEven);
